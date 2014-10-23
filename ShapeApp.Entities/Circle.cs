@@ -12,11 +12,12 @@ namespace ShapeApp.Entities
 
         #region Constructor
 
-        public Circle(Point center, double radius)
+        public Circle(Point center, decimal radius)
             : base()
         {
 
-            
+            Center = center;
+            Radius = radius;
         }
 
         #endregion
@@ -36,6 +37,10 @@ namespace ShapeApp.Entities
         #endregion
 
         #region Properties
+
+        public decimal Radius { get; set; }
+
+        public Point Center { get; set; }
 
         #endregion
 

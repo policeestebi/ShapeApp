@@ -27,13 +27,13 @@ namespace ShapeApp
             do{
                 
                 Console.Clear();
-                Console.WriteLine("Welcome to ShapeAppb \n\n");
+                Console.WriteLine("\t\t\tWelcome to ShapeAppb \n\n");
                 Console.WriteLine("1-Add a shape.");
                 Console.WriteLine("2-Insert a point.");
                 Console.WriteLine("3-List all shapes.");
                 Console.WriteLine("4-Add data using a txt file.");
                 Console.WriteLine("5-Help.");
-                Console.WriteLine("5-Exit.");
+                Console.WriteLine("6-Exit.");
                 Console.WriteLine("\n\n");
                 Console.Write("Enter: ");
                 op = Console.ReadKey(false);
@@ -53,6 +53,7 @@ namespace ShapeApp
         /// <returns></returns>
         public static bool CheckOperation(ConsoleKeyInfo op) {
 
+            
             if (op == null) return false;
 
             bool exit = false;
@@ -60,7 +61,7 @@ namespace ShapeApp
             switch (op.Key) { 
             
             
-                case ConsoleKey.D5:
+                case ConsoleKey.NumPad6:
                     exit = true;
                     break;
                 default:

@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
+    <Compile Include="IShapeValidator.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RectangleValidator.cs" />
     <Compile Include="Shape.cs" />
   </ItemGroup>
   <ItemGroup>
