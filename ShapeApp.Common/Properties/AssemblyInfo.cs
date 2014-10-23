@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("ShapeApp")]
+[assembly: AssemblyTitle("ShapeApp.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ShapeApp")]
+[assembly: AssemblyProduct("ShapeApp.Common")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como identificador de typelib si este proyecto se expone a COM
-[assembly: Guid("d4b36de0-ced7-4a7d-9e19-114ffb147d61")]
+[assembly: Guid("40e25006-eb7f-4d01-a85b-43b29bd889cf")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //

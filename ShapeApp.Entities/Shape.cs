@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace ShapeApp.Entities
 {
@@ -15,24 +16,31 @@ namespace ShapeApp.Entities
 
         #region Methods
 
-        public abstract float GetArea();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public abstract double GetArea();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
         public abstract bool IsPointInside(Point point);
 
-        public abstract bool IsValidData(string entry);
+       
 
         #endregion
 
         #region Properties
 
-        public string PatternEntry { get; set; }
-
-        public string ShapeName { get; set; }
-        
+        public int Id { get; set; }
+     
         #endregion
 
         #region Attributes
-        
+
         #endregion
 
     }
