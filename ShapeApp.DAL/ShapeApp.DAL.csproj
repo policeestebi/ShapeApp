@@ -39,8 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IShapeFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShapeDAO.cs" />
     <Compile Include="ShapeFactory\CircleFactory.cs" />
+    <Compile Include="ShapeFactory\ShapeFactory.cs" />
     <Compile Include="ShapeFactory\ShapeFactoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +52,7 @@
       <Name>ShapeApp.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
