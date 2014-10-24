@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace ShapeApp.Entities
 {
-    public class RectangleValidator: IShapeValidator
+    public class RectangleValidator
     {
 
         public bool ValidateEntry(string entry)

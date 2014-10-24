@@ -12,12 +12,17 @@ namespace ShapeApp.Entities
 
         #region Constructor
 
-        public Circle(Point center, decimal radius)
+        public Circle(Point center, double radius)
             : base()
         {
 
             Center = center;
             Radius = radius;
+        }
+
+        public Circle(string shapeDefinition)
+            :base(shapeDefinition)
+        {
         }
 
         #endregion
@@ -26,7 +31,7 @@ namespace ShapeApp.Entities
 
         public override double GetArea()
         {
-            throw new NotImplementedException();
+            return Math.PI * Radius * Radius;
         }
 
         public override bool IsPointInside(Point point)
@@ -34,11 +39,46 @@ namespace ShapeApp.Entities
             throw new NotImplementedException();
         }
 
+        public override void CreateShapeBaseOnText(string shapeDefinition)
+        {
+            try
+            {
+
+                if (String.IsNullOrEmpty(shapeDefinition)) return;
+
+                var values = shapeDefinition.Split(Constants.CHARACTER_SEPARATOR);
+
+                if (values == null || values.Length == 4) return;
+
+                //X Center point
+                var centerX = values[1];
+
+                var centerY = values[2];
+
+                var radius = values[3];
+
+                this.Center = new Point(Convert.ToDecimal(centerX), Convert.ToDecimal(centerY));
+
+                Radius = Convert.ToDouble(radius) ;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public override string GetFormatString()
+        {
+            return String.Format("Circle with centre at {0} and radius {1}", Center.ToString(), Radius.ToString());
+        }
+
         #endregion
 
         #region Properties
 
-        public decimal Radius { get; set; }
+        public double Radius { get; set; }
 
         public Point Center { get; set; }
 
@@ -51,6 +91,10 @@ namespace ShapeApp.Entities
 
 
 
-        
+
+
+
+
+       
     }
 }

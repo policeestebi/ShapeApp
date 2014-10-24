@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp.Entities", "ShapeA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp.Common", "ShapeApp.Common\ShapeApp.Common.csproj", "{CB046FA1-D3E5-4989-8B79-E6BB6570E9A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp.DAL", "ShapeApp.DAL\ShapeApp.DAL.csproj", "{62500FF6-6E2A-4AD1-8B23-74EB1C6A48ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{CB046FA1-D3E5-4989-8B79-E6BB6570E9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB046FA1-D3E5-4989-8B79-E6BB6570E9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB046FA1-D3E5-4989-8B79-E6BB6570E9A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62500FF6-6E2A-4AD1-8B23-74EB1C6A48ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62500FF6-6E2A-4AD1-8B23-74EB1C6A48ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62500FF6-6E2A-4AD1-8B23-74EB1C6A48ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62500FF6-6E2A-4AD1-8B23-74EB1C6A48ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

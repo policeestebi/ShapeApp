@@ -12,6 +12,22 @@ namespace ShapeApp.Entities
 
         #region Constructor
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public Shape()
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="shapeDefinition"></param>
+        public Shape(string shapeDefinition)
+        {
+            CreateShapeBaseOnText(shapeDefinition);
+        }
+
         #endregion
 
         #region Methods
@@ -29,7 +45,27 @@ namespace ShapeApp.Entities
         /// <returns></returns>
         public abstract bool IsPointInside(Point point);
 
-       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="shapeDefinition"></param>
+        /// <returns></returns>
+        public abstract void CreateShapeBaseOnText(string shapeDefinition);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public abstract string GetFormatString();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return String.Format("Shape {0}: {1} ", Id.ToString(), GetFormatString());
+        }
 
         #endregion
 

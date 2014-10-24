@@ -9,8 +9,19 @@ namespace ShapeApp.Entities
     public struct Point
     {
 
-        public float X { get; set; }
-        public float Y { get; set; }
+        public Point(decimal x, decimal y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("({0} , {1})", X.ToString(), Y.ToString());
+        }
+
+        public decimal X { get; set; }
+        public decimal Y { get; set; }
 
     }
 }
