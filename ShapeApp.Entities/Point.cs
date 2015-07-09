@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShapeApp.Entities
 {
-    public struct Point
+    public class Point
     {
 
         public Point(decimal x, decimal y)

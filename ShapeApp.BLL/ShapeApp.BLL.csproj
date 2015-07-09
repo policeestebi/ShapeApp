@@ -47,6 +47,10 @@
       <Project>{62500ff6-6e2a-4ad1-8b23-74eb1c6a48ed}</Project>
       <Name>ShapeApp.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShapeApp.Entities\ShapeApp.Entities.csproj">
+      <Project>{897d3d17-61ea-4659-931f-bcbad3be0f84}</Project>
+      <Name>ShapeApp.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,6 +14,6 @@ namespace ShapeApp.DAL.Interfaces
 
         Shape CreateShape(string shapeDefinition);
 
-        public IEnumerable<ShapeFactoryBase> Factories { get; set; }
+        IEnumerable<ShapeFactoryBase> Factories { get; set; }
     }
 }

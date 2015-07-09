@@ -41,11 +41,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCommand.cs" />
+    <Compile Include="BaseArgument.cs" />
+    <Compile Include="ArgumentCentre.cs" />
+    <Compile Include="ArgumentX.cs" />
+    <Compile Include="ArgumentY.cs" />
+    <Compile Include="BaseCommand.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ArgumentRadius.cs" />
+    <Compile Include="RectanguleCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShapeApp.BLL\ShapeApp.BLL.csproj">
+      <Project>{54e5d478-5f6e-448d-a352-97c60329919a}</Project>
+      <Name>ShapeApp.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShapeApp.Common\ShapeApp.Common.csproj">
+      <Project>{cb046fa1-d3e5-4989-8b79-e6bb6570e9a3}</Project>
+      <Name>ShapeApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShapeApp.Entities\ShapeApp.Entities.csproj">
+      <Project>{897d3d17-61ea-4659-931f-bcbad3be0f84}</Project>
+      <Name>ShapeApp.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

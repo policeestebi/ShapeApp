@@ -68,7 +68,6 @@ namespace ShapeApp.Entities
             }
         }
 
-
         public override string GetFormatString()
         {
             return String.Format("Circle with centre at {0} and radius {1}", Center.ToString(), Radius.ToString());
@@ -89,12 +88,5 @@ namespace ShapeApp.Entities
         #endregion
 
 
-
-
-
-
-
-
-       
     }
 }

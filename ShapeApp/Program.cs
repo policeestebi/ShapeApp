@@ -11,6 +11,12 @@ namespace ShapeApp
         static void Main(string[] args)
         {
 
+            var command = new RectanguleCommand();
+
+            Console.WriteLine(command.ToString());
+
+            Console.ReadKey();
+
             ShowMenu();
 
         }
@@ -21,7 +27,7 @@ namespace ShapeApp
         /// </summary>
         public static void ShowMenu() { 
         
-            ConsoleKeyInfo op;
+            string op;
             bool exit = false;
 
             do{
@@ -36,7 +42,9 @@ namespace ShapeApp
                 Console.WriteLine("6-Exit.");
                 Console.WriteLine("\n\n");
                 Console.Write("Enter: ");
-                op = Console.ReadKey(false);
+                op = Console.ReadLine();
+
+                op = op.ToLower();
 
                 exit = CheckOperation(op);
                 
@@ -51,14 +59,14 @@ namespace ShapeApp
         /// </summary>
         /// <param name="op"></param>
         /// <returns></returns>
-        public static bool CheckOperation(ConsoleKeyInfo op) {
+        public static bool CheckOperation(string op) {
 
-            
-            if (op == null) return false;
+            return true;
+            /*if (op == null) return false;
 
             bool exit = false;
 
-            switch (op.Key) { 
+            switch (op. { 
             
             
                 case ConsoleKey.NumPad6:
@@ -70,7 +78,7 @@ namespace ShapeApp
             }
 
 
-            return exit;
+            return exit;*/
         
         }
 
