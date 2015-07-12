@@ -29,7 +29,7 @@ namespace ShapeApp
                 shapeFactories.Add(new CircleFactory());
                 shapeFactories.Add(new SquareFactory());
                 shapeFactories.Add(new RectangleFactory());
-                shapeFactories.Add(new TrianguleFactory());
+                shapeFactories.Add(new TriangleFactory());
                 shapeFactories.Add(new DonutFactory());
 
                 var shapeFactory = new ShapeFactory(shapeFactories);
@@ -48,7 +48,7 @@ namespace ShapeApp
             shapeFactories.Add(new CircleFactory());
             shapeFactories.Add(new SquareFactory());
             shapeFactories.Add(new RectangleFactory());
-            shapeFactories.Add(new TrianguleFactory());
+            shapeFactories.Add(new TriangleFactory());
             shapeFactories.Add(new DonutFactory());
 
             var shapeFactory = new ShapeFactory(shapeFactories);

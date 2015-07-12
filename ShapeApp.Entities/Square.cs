@@ -8,15 +8,14 @@ using ShapeApp.Common;
 
 namespace ShapeApp.Entities
 {
-    public class Square:Shape
+    public class Square:Rectangle
     {
         #region Constructor
 
-         public Square(Point corner, double side)
+        public Square(Point corner, double side)
+            : base(corner, side, side)
         {
-
-            Corner = corner;
-            Side = side;
+         
         
         }
 
@@ -29,16 +28,6 @@ namespace ShapeApp.Entities
         #endregion
 
         #region Methods
-
-         public override double GetArea()
-         {
-             return Side * Side;
-         }
-
-         public override bool IsPointInside(Point point)
-         {
-             return true;
-         }
 
          public override void CreateShapeBaseOnText(string shapeDefinition)
          {
@@ -59,7 +48,9 @@ namespace ShapeApp.Entities
 
                  this.Corner = new Point(decimal.Parse(cornerX, System.Globalization.CultureInfo.InvariantCulture), decimal.Parse(cornerY, System.Globalization.CultureInfo.InvariantCulture));
 
-                 this.Side = double.Parse(side, System.Globalization.CultureInfo.InvariantCulture);
+                 this.Side1 = double.Parse(side, System.Globalization.CultureInfo.InvariantCulture);
+
+                 this.Side2 = Side1;
 
              }
              catch (Exception ex)
@@ -70,16 +61,16 @@ namespace ShapeApp.Entities
 
          public override string GetFormatString()
          {
-             return String.Format("Square with corner at {0} and side one {1}", Corner != null ? Corner.ToString(): String.Empty, Side.ToString());
+             return String.Format("Square with corner at {0} and side one {1}", Corner != null ? Corner.ToString(): String.Empty, Side1.ToString());
          }
 
         #endregion
 
         #region Properties
 
-        public Point Corner { get; set; }
+        /*public Point Corner { get; set; }
 
-        public double Side { get; set; }
+        public double Side { get; set; }*/
 
         #endregion
 

@@ -54,7 +54,7 @@ namespace ShapeApp
         {
             get
             {
-                return @"search(\s+[-]?[0-9]+[.[0-9]+]?){2}";
+                return @"search(\s+[-]?[0-9]+(.[0-9]+)?){2}";
             }
         }
 

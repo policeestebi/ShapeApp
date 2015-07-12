@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 using ShapeApp.Common;
 namespace ShapeApp.Entities
 {
-    public class Triangule: Shape
+    public class Triangle: Shape
     {
         #region Constructor
 
-        public Triangule(Point vertice1, Point vertice2, Point vertice3)
+        public Triangle(Point vertice1, Point vertice2, Point vertice3)
         {
             Vertice1 = vertice1;
             Vertice2 = vertice2;
-            vertice3 = Vertice3;
+            Vertice3 = vertice3;
         }
 
-         public Triangule(string shapeDefinition)
+         public Triangle(string shapeDefinition)
             :base(shapeDefinition)
         {
         }
@@ -31,12 +31,28 @@ namespace ShapeApp.Entities
              //Tringle area based in 3 vertices
              //See for reference http://www.mathopenref.com/coordtrianglearea.html
 
+             return Convert.ToDouble( Math.Abs( (Vertice1.X * (Vertice2.Y - Vertice3.Y) + Vertice2.X * (Vertice3.Y - Vertice1.Y) + Vertice3.X * (Vertice1.Y - Vertice2.Y)) / 2));
+         }
+
+         public double GetAreaNotAbs()
+         {
+             //Tringle area based in 3 vertices
+             //See for reference http://www.mathopenref.com/coordtrianglearea.html
+
              return Convert.ToDouble((Vertice1.X * (Vertice2.Y - Vertice3.Y) + Vertice2.X * (Vertice3.Y - Vertice1.Y) + Vertice3.X * (Vertice1.Y - Vertice2.Y)) / 2);
          }
 
+
+
          public override bool IsPointInside(Point point)
          {
-             return true;
+             //See this url for reference http://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
+
+             var triangleA = new Triangle(point, Vertice1, Vertice2);
+             var triangleB = new Triangle(point, Vertice2,Vertice3);
+             var triangleC = new Triangle(point, Vertice1,Vertice3);
+
+             return GetArea() == (triangleA.GetArea() + triangleB.GetArea() + triangleC.GetArea());
          }
 
          public override void CreateShapeBaseOnText(string shapeDefinition)

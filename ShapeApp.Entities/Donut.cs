@@ -42,7 +42,14 @@ namespace ShapeApp.Entities
 
         public override bool IsPointInside(Point point)
         {
-            return true;
+            var innerCircle = new Circle(Centre, Radius1);
+            var outerCicle = new Circle(Centre, Radius2);
+
+            if (innerCircle.IsPointInside(point)) return false;
+
+            if (outerCicle.IsPointInside(point)) return true;
+
+            return false;
         }
 
         public override void CreateShapeBaseOnText(string shapeDefinition)
@@ -91,8 +98,14 @@ namespace ShapeApp.Entities
 
         public Point Centre { get; set; }
 
+        /// <summary>
+        /// Smallest one
+        /// </summary>
         public double Radius1 { get; set; }
 
+        /// <summary>
+        /// Largest one
+        /// </summary>
         public double Radius2 { get; set; }
 
         #endregion

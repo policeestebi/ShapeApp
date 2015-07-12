@@ -47,7 +47,7 @@
     <Compile Include="Rectangle.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="Square.cs" />
-    <Compile Include="Triangule.cs" />
+    <Compile Include="Triangle.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShapeApp.Common\ShapeApp.Common.csproj">

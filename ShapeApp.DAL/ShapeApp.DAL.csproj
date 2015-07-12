@@ -49,7 +49,7 @@
     <Compile Include="ShapeFactory\ShapeFactory.cs" />
     <Compile Include="ShapeFactory\ShapeFactoryBase.cs" />
     <Compile Include="ShapeFactory\SquareFactory.cs" />
-    <Compile Include="ShapeFactory\TrianguleFactory.cs" />
+    <Compile Include="ShapeFactory\TriangleFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShapeApp.Entities\ShapeApp.Entities.csproj">

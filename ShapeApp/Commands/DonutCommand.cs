@@ -41,8 +41,8 @@ namespace ShapeApp
 
             Arguments.Add(new ArgumentX { ExtraDesciption = "Centre X coordinate" });
             Arguments.Add(new ArgumentY { ExtraDesciption = "Centre Y coordinate" });
-            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Radius 1" });
-            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Radius 2" });
+            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Inner Radius " });
+            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Outer Radius " });
 
         }
 

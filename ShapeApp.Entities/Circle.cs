@@ -36,7 +36,7 @@ namespace ShapeApp.Entities
 
         public override bool IsPointInside(Point point)
         {
-            return true;
+            return Convert.ToDouble(Math.Abs(point.X - Center.X) + Math.Abs(point.Y - Center.Y)) < Radius;
         }
 
         public override void CreateShapeBaseOnText(string shapeDefinition)

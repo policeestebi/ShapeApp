@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp", "ShapeApp\ShapeApp.csproj", "{F9E6FA1F-D48F-42D5-B93B-8458DFC6FF68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp.Entities", "ShapeApp.Entities\ShapeApp.Entities.csproj", "{897D3D17-61EA-4659-931F-BCBAD3BE0F84}"
@@ -10,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp.DAL", "ShapeApp.DAL\ShapeApp.DAL.csproj", "{62500FF6-6E2A-4AD1-8B23-74EB1C6A48ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp.BLL", "ShapeApp.BLL\ShapeApp.BLL.csproj", "{54E5D478-5F6E-448D-A352-97C60329919A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp.UnitTesting", "ShapeApp.UnitTesting\ShapeApp.UnitTesting.csproj", "{60559D00-7624-4158-9AC5-5AB307C09E69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{54E5D478-5F6E-448D-A352-97C60329919A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E5D478-5F6E-448D-A352-97C60329919A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E5D478-5F6E-448D-A352-97C60329919A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60559D00-7624-4158-9AC5-5AB307C09E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60559D00-7624-4158-9AC5-5AB307C09E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60559D00-7624-4158-9AC5-5AB307C09E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60559D00-7624-4158-9AC5-5AB307C09E69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

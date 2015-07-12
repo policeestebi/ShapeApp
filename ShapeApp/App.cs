@@ -85,11 +85,11 @@ namespace ShapeApp
 
             //Add Initial Data 
 
-            ExecuteOperation("circle 1.7 -5.05 6.9");
+           /* ExecuteOperation("circle 1.7 -5.05 6.9");
             ExecuteOperation("square 3.55 4.1 2.77");
             ExecuteOperation("rectangle 3.5 2.0 5.6 7.2");
             ExecuteOperation("triangle 4.5 1 -2.5 -33 23 0.3");
-            ExecuteOperation("donut 4.5 7.8 1.5 1.8");
+            ExecuteOperation("donut 4.5 7.8 1.5 1.8");*/
 
         }
 
@@ -133,6 +133,8 @@ namespace ShapeApp
             options.AppendLine("\t\t----------By Esteban Ramirez González------------");
             options.AppendLine("\t\t-------------------------------------------------");
             options.AppendLine("\n");
+
+            options.AppendLine("**Note: run \"load files/shapes.txt\" to load initial shapes.\n");
 
             Commands.ToList().ForEach(
                     c =>

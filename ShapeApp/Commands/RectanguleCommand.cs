@@ -36,8 +36,8 @@ namespace ShapeApp
 
             Arguments.Add(new ArgumentX { ExtraDesciption = "One Corner X coordinate" });
             Arguments.Add(new ArgumentY { ExtraDesciption = "One Corner Y coordinate" });
-            Arguments.Add(new ArgumentSide { ExtraDesciption = "Side 1" });
-            Arguments.Add(new ArgumentSide { ExtraDesciption = "Side 2" });
+            Arguments.Add(new ArgumentSide { ExtraDesciption = "Height" });
+            Arguments.Add(new ArgumentSide { ExtraDesciption = "Width" });
 
         }
 

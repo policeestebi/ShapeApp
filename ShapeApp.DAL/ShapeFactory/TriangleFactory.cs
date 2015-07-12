@@ -7,7 +7,7 @@ using ShapeApp.Entities;
 
 namespace ShapeApp.DAL.ShapeFactory
 {
-    public class TrianguleFactory : ShapeFactoryBase
+    public class TriangleFactory : ShapeFactoryBase
     {
         #region Constructor
 
@@ -21,7 +21,7 @@ namespace ShapeApp.DAL.ShapeFactory
         {
             if (!IsValid(shapeDefinition)) return null;
 
-            return new Triangule(shapeDefinition);
+            return new Triangle(shapeDefinition);
 
         }
 
