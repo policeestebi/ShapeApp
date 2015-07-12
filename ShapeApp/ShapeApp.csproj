@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arguments\ArgumentPath.cs" />
+    <Compile Include="Bindings.cs" />
     <Compile Include="Commands\AddCommand.cs" />
     <Compile Include="Arguments\ArgumentSide.cs" />
     <Compile Include="Arguments\BaseArgument.cs" />
@@ -52,7 +57,10 @@
     <Compile Include="Commands\DonutCommand.cs" />
     <Compile Include="Commands\ExitCommand.cs" />
     <Compile Include="Commands\HelpCommand.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Commands\ListCommand.cs" />
+    <Compile Include="Commands\LoadCommand.cs" />
+    <Compile Include="Commands\SearchCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Arguments\ArgumentRadius.cs" />
@@ -63,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShapeApp.BLL\ShapeApp.BLL.csproj">
@@ -72,6 +81,10 @@
     <ProjectReference Include="..\ShapeApp.Common\ShapeApp.Common.csproj">
       <Project>{cb046fa1-d3e5-4989-8b79-e6bb6570e9a3}</Project>
       <Name>ShapeApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShapeApp.DAL\ShapeApp.DAL.csproj">
+      <Project>{62500ff6-6e2a-4ad1-8b23-74eb1c6a48ed}</Project>
+      <Name>ShapeApp.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ShapeApp.Entities\ShapeApp.Entities.csproj">
       <Project>{897d3d17-61ea-4659-931f-bcbad3be0f84}</Project>

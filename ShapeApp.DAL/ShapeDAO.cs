@@ -5,28 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using ShapeApp.Entities;
 using System.Data;
+using ShapeApp.DAL.Interfaces;
 
 namespace ShapeApp.DAL
 {
-    public class ShapeDAO
+    public class ShapeDAO : IShapeDAO
     {
 
-        protected ShapeDAO()
+        public ShapeDAO()
         {
-            currentId = 1;
+            CurrentId = 1;
             shapeCollection = new Dictionary<int, Shape>();
-        }
-
-
-        public ShapeDAO Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new ShapeDAO();
-
-                return instance;
-            }
         }
 
         public bool Insert(Shape shape)
@@ -35,11 +24,35 @@ namespace ShapeApp.DAL
 
             if (shapeCollection == null) return false;
 
-            shape.Id = currentId++;
+            shape.Id = CurrentId++;
 
             shapeCollection.Add(shape.Id, shape);
 
             return true;
+
+        }
+
+        public IList<Shape> GetShapesInsidePoint(Point point){
+
+            try 
+	        {	
+                var shapes = new List<Shape>();
+
+		        foreach (var item in shapeCollection)
+	            {
+		            if(item.Value.IsPointInside(point)){
+
+                        shapes.Add(item.Value);
+
+                    }
+	            }
+
+                return shapes;
+	        }
+	        catch (Exception)
+	        {
+		        throw new Exception("Error checking the point");
+	        }
 
         }
 
@@ -55,9 +68,11 @@ namespace ShapeApp.DAL
             return shapeCollection.Select(c => c.Value).ToList();
         }
 
-        private static ShapeDAO instance;
-
-        private int currentId;
+        private int CurrentId
+        {
+            get;
+            set;
+        }
 
         private IDictionary<int, Shape> shapeCollection; 
 

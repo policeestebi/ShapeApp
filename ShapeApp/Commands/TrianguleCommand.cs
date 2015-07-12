@@ -31,7 +31,7 @@ namespace ShapeApp
             var isValid = OnValid(commandText);
 
             if (!isValid)
-                throw new Exception("Unknow command line" + "\n\n" + "USE: ");
+                throw new Exception("Unknow command line" + "\n\n" + "USE: " + GetHelp());
 
             return isValid;
         }

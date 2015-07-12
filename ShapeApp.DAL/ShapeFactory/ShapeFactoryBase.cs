@@ -18,8 +18,18 @@ namespace ShapeApp.DAL.ShapeFactory
 
         #region Methods
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="shapeDefinition"></param>
+        /// <returns></returns>
         public abstract Shape Create(string shapeDefinition);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="shapeDefinition"></param>
+        /// <returns></returns>
         public bool IsValid(string shapeDefinition)
         {
             if (String.IsNullOrEmpty(shapeDefinition)) throw new ArgumentNullException();
@@ -41,6 +51,9 @@ namespace ShapeApp.DAL.ShapeFactory
 
         #region Attributes
 
+        /// <summary>
+        /// 
+        /// </summary>
         public abstract string Pattern { get;}
 
         #endregion

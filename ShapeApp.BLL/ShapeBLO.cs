@@ -6,26 +6,22 @@ using System.Threading.Tasks;
 using ShapeApp.DAL.ShapeFactory;
 using ShapeApp.DAL;
 using ShapeApp.DAL.Interfaces;
+using ShapeApp.Entities;
 
 
 namespace ShapeApp.BLL
 {
-    public class ShapeBLO
+    public class ShapeBLO : ShapeApp.BLL.Interfaces.IShapeBLO
     {
         #region Constructor
 
-        public ShapeBLO(ShapeDAO shape,IShapeFactory shapeFactory)
+        public ShapeBLO(IShapeDAO shape,IShapeFactory shapeFactory)
         {
             ShapeDAO = shape;
             ShapeFactory = shapeFactory;
         }
 
-        public ShapeBLO()
-        {
-            ShapeDAO = ShapeDAO.Instance;
-            ShapeFactory = new ShapeFactory();
-        }
-
+        
         #endregion
 
         /// <summary>
@@ -33,15 +29,17 @@ namespace ShapeApp.BLL
         /// </summary>
         /// <param name="shapeDefinition"></param>
         /// <returns></returns>
-        public bool AddShape(string shapeDefinition)
+        public Shape AddShape(string shapeDefinition)
         {
-            if(ShapeDAO == null || ShapeFactory == null) return false;
+            if(ShapeDAO == null || ShapeFactory == null) return null;
 
             var shape = ShapeFactory.CreateShape(shapeDefinition);
 
-            if (shape == null) return false;
+            if (shape == null) return null;
 
-            return ShapeDAO.Insert(shape);
+            ShapeDAO.Insert(shape);
+
+            return shape;
         }
 
         /// <summary>
@@ -59,7 +57,38 @@ namespace ShapeApp.BLL
         /// <summary>
         /// 
         /// </summary>
-        public ShapeDAO ShapeDAO { get; set; }
+        /// <param name="point"></param>
+        /// <returns></returns>
+        public IList<Shape> GetShapesInsidePoint(Point point)
+        {
+            return ShapeDAO.GetShapesInsidePoint(point);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="shapeDefinition"></param>
+        /// <returns></returns>
+        public bool IsValid(string shapeDefinition)
+        {
+            if (ShapeFactory == null) return false;
+
+            return ShapeFactory.IsValid(shapeDefinition);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IList<Shape> GetAllShapes()
+        {
+            return ShapeDAO.List().ToList();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IShapeDAO ShapeDAO { get; set; }
 
         /// <summary>
         /// 

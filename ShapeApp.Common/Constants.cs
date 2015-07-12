@@ -10,9 +10,9 @@ namespace ShapeApp.Common
     {
 
         public const string CIRCLE_NAME = "circle";
-        public const string RECTANGULE_NAME = "rectangule";
+        public const string RECTANGULE_NAME = "rectangle";
         public const string DONUT_NAME = "donut";
-        public const string TRIANGULE_NAME = "triangule";
+        public const string TRIANGULE_NAME = "triangle";
         public const string SQUARE_NAME = "square";
 
         public const char CHARACTER_SEPARATOR = ' ';
@@ -21,6 +21,8 @@ namespace ShapeApp.Common
         public const string COMMAND_LIST = "list";
         public const string COMMAND_HELP = "help";
         public const string COMMAND_EXIT = "exit";
+        public const string COMMAND_SEARCH = "search";
+        public const string COMMAND_LOAD = "load";
         
 
     }

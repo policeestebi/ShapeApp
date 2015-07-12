@@ -13,11 +13,9 @@ namespace ShapeApp.DAL.ShapeFactory
         /// <summary>
         /// 
         /// </summary>
-        public ShapeFactory()
+        public ShapeFactory(List<ShapeFactoryBase> factories)
         {
-            Factories = new List<ShapeFactoryBase>{
-                               new CircleFactory()
-                            };
+            Factories = factories;
         }
 
         /// <summary>
@@ -31,7 +29,7 @@ namespace ShapeApp.DAL.ShapeFactory
 
             foreach (var factory in Factories)
             {
-                if (factory.IsValid(shapeDefinition));
+                if (factory.IsValid(shapeDefinition))
                     return true;
             }
 

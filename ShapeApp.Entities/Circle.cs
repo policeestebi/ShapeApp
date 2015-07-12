@@ -13,7 +13,6 @@ namespace ShapeApp.Entities
         #region Constructor
 
         public Circle(Point center, double radius)
-            : base()
         {
 
             Center = center;
@@ -23,6 +22,7 @@ namespace ShapeApp.Entities
         public Circle(string shapeDefinition)
             :base(shapeDefinition)
         {
+           // CreateShapeBaseOnText(shapeDefinition);
         }
 
         #endregion
@@ -36,7 +36,7 @@ namespace ShapeApp.Entities
 
         public override bool IsPointInside(Point point)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public override void CreateShapeBaseOnText(string shapeDefinition)
@@ -48,7 +48,7 @@ namespace ShapeApp.Entities
 
                 var values = shapeDefinition.Split(Constants.CHARACTER_SEPARATOR);
 
-                if (values == null || values.Length == 4) return;
+                if (values == null || values.Length > 4) return;
 
                 //X Center point
                 var centerX = values[1];
@@ -57,9 +57,9 @@ namespace ShapeApp.Entities
 
                 var radius = values[3];
 
-                this.Center = new Point(Convert.ToDecimal(centerX), Convert.ToDecimal(centerY));
+                this.Center = new Point(decimal.Parse(centerX, System.Globalization.CultureInfo.InvariantCulture), decimal.Parse(centerY, System.Globalization.CultureInfo.InvariantCulture));
 
-                Radius = Convert.ToDouble(radius) ;
+                Radius = double.Parse(radius, System.Globalization.CultureInfo.InvariantCulture);
 
             }
             catch (Exception ex)
@@ -70,7 +70,7 @@ namespace ShapeApp.Entities
 
         public override string GetFormatString()
         {
-            return String.Format("Circle with centre at {0} and radius {1}", Center.ToString(), Radius.ToString());
+            return String.Format("Circle with centre at {0} and radius {1}" ,(Center != null ?Center.ToString() : string.Empty) , Radius.ToString());
         }
 
         #endregion

@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using ShapeApp.Common;
+using System.Text.RegularExpressions;
 
 namespace ShapeApp
 {
-    public class DonutCommand : Command
+    public class SearchCommand:Command
     {
         #region Constructor
-
-        public DonutCommand()
-            : base()
-        {
-
-        }
 
         #endregion
 
@@ -23,30 +19,27 @@ namespace ShapeApp
 
         public override bool IsValid(string commandText)
         {
-            if (String.IsNullOrEmpty(commandText)) return false;
-
             if (!commandText.StartsWith(Name)) return false;
 
-            var isValid = OnValid(commandText);
+            if (String.IsNullOrEmpty(commandText)) return false;
 
-            if (!isValid)
+            var regex = new Regex(this.Pattern);
+
+            var match = regex.Match(commandText);
+
+            if (!match.Success)
                 throw new Exception("Unknow command line" + "\n\n" + "USE: " + GetHelp());
 
-            return isValid;
+            return true;
+
         }
 
         public override void DefineArguments()
         {
             Arguments = new List<BaseArgument>();
-
-            Arguments.Add(new ArgumentX { ExtraDesciption = "Centre X coordinate" });
-            Arguments.Add(new ArgumentY { ExtraDesciption = "Centre Y coordinate" });
-            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Radius 1" });
-            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Radius 2" });
-
+            Arguments.Add(new ArgumentX { ExtraDesciption = "Coordinate X" });
+            Arguments.Add(new ArgumentY { ExtraDesciption = "Coordinate Y" });
         }
-
-       
 
         #endregion
 
@@ -54,7 +47,15 @@ namespace ShapeApp
 
         public override string Name
         {
-            get { return Constants.DONUT_NAME; }
+            get { return Constants.COMMAND_SEARCH; }
+        }
+
+        public String Pattern
+        {
+            get
+            {
+                return @"search(\s+[-]?[0-9]+[.[0-9]+]?){2}";
+            }
         }
 
         #endregion

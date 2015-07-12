@@ -5,17 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using ShapeApp.Common;
 
+
 namespace ShapeApp
 {
-    public class CircleCommand : Command
+    public class ListCommand : Command
     {
 
         #region Constructor
-
-        public CircleCommand():base()
-        {
-
-        }
 
         #endregion
 
@@ -25,23 +21,12 @@ namespace ShapeApp
         {
             if (String.IsNullOrEmpty(commandText)) return false;
 
-            if (!commandText.StartsWith(Name)) return false;
-
-            var isValid = OnValid(commandText);
-
-            if (!isValid)
-                throw new Exception("Unknow command line" + "\n\n" + "USE: " + this.GetHelp());
-
-            return isValid;
+            return commandText.Equals(Name);
         }
 
         public override void DefineArguments()
         {
             Arguments = new List<BaseArgument>();
-
-            Arguments.Add(new ArgumentX { ExtraDesciption = "Centre X coordinate"});
-            Arguments.Add(new ArgumentY { ExtraDesciption = "Centre Y coordinate" });
-            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Circle Radius" });
 
         }
 
@@ -51,7 +36,7 @@ namespace ShapeApp
 
         public override string Name
         {
-            get { return Constants.CIRCLE_NAME; }
+            get { return Constants.COMMAND_LIST; }
         }
 
         #endregion
@@ -64,11 +49,5 @@ namespace ShapeApp
 
         #endregion
 
-
-
-
-
-
-       
     }
 }
