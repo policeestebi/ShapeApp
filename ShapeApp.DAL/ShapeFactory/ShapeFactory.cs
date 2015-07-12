@@ -8,7 +8,7 @@ using ShapeApp.DAL.Interfaces;
 
 namespace ShapeApp.DAL.ShapeFactory
 {
-    public class ShapeFactory : IShapeFactory
+    public class ShapeFactory : IShapeFactory, IDisposable
     {
         /// <summary>
         /// 
@@ -58,5 +58,11 @@ namespace ShapeApp.DAL.ShapeFactory
         /// </summary>
         public IEnumerable<ShapeFactoryBase> Factories{get;set;}
 
+
+        public void Dispose()
+        {
+            Factories = null;
+                
+        }
     }
 }

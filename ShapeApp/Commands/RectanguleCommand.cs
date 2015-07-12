@@ -41,8 +41,6 @@ namespace ShapeApp
 
         }
 
-
-
         #endregion
 
         #region Properties

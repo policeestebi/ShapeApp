@@ -48,8 +48,6 @@ namespace ShapeApp.Common
 
         #region Attributes
 
-        
-
         #endregion
 
     }

@@ -15,7 +15,7 @@ namespace ShapeApp
         #region Constructor
 
         /// <summary>
-        /// 
+        /// App's Constructor
         /// </summary>
         /// <param name="shapeBlo"></param>
         public App(IShapeBLO shapeBlo)
@@ -32,7 +32,7 @@ namespace ShapeApp
         #region Methods
 
         /// <summary>
-        /// 
+        /// Init Components.
         /// </summary>
         private void InitComponents()
         {
@@ -81,7 +81,6 @@ namespace ShapeApp
             Commands.Add(loadCommand);
             Commands.Add(helpCommand);
             Commands.Add(exitCommand);
-            
 
             //Add Initial Data 
 
@@ -93,13 +92,10 @@ namespace ShapeApp
 
         }
 
-        
-
-       
         /// <summary>
-        /// 
+        /// Show Help.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>String with app's help.</returns>
         public String ShowHelp()
         {
 
@@ -121,9 +117,9 @@ namespace ShapeApp
         }
        
         /// <summary>
-        /// 
+        /// Show App's Menu.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>String with the app's menu.</returns>
         public String ShowMenu()
         {
             var options = new StringBuilder();
@@ -157,7 +153,7 @@ namespace ShapeApp
         }
 
         /// <summary>
-        /// 
+        /// Run the application.
         /// </summary>
         public void Run()
         {
@@ -175,7 +171,7 @@ namespace ShapeApp
         }
 
         /// <summary>
-        /// 
+        /// Execute an operation, using the entry.
         /// </summary>
         /// <param name="textCommand"></param>
         private void ExecuteOperation(string textCommand)
@@ -202,21 +198,44 @@ namespace ShapeApp
 
         }
 
-        
+        public void Dispose()
+        {
+            ShapeBlo = null;
+        }
 
         #endregion
 
         #region Properties
 
+        /// <summary>
+        /// Command list.
+        /// </summary>
         public IList<Command> Commands { get; set; }
+
+        /// <summary>
+        /// For controlling app execution.
+        /// </summary>
         public bool Continue { get; set; }
+
+        /// <summary>
+        /// Global Message for the user.
+        /// </summary>
         public string Message { get; set; }
+
+        /// <summary>
+        /// Instance of the ShapeBlo.
+        /// </summary>
         public IShapeBLO ShapeBlo { get; set; }
 
         #endregion
 
         #region Events
 
+        /// <summary>
+        /// Load execute event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="commandText"></param>
         public void loadCommand_onExecute(object sender, string commandText)
         {
             try
@@ -244,7 +263,7 @@ namespace ShapeApp
         }
 
         /// <summary>
-        /// 
+        /// Search execute event.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="commandText"></param>
@@ -289,7 +308,7 @@ namespace ShapeApp
         }
 
         /// <summary>
-        /// 
+        /// Help execute event.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="commandText"></param>
@@ -306,7 +325,7 @@ namespace ShapeApp
         }
 
         /// <summary>
-        /// 
+        /// Validate event for shape commands.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="coommandText"></param>
@@ -317,7 +336,7 @@ namespace ShapeApp
         }
 
         /// <summary>
-        /// 
+        /// Execute event for shape commands.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="commandText"></param>
@@ -335,17 +354,21 @@ namespace ShapeApp
         }
 
         /// <summary>
-        /// 
+        /// Exit Execute event.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="commandText"></param>
         private void exitCommand_onExecute(object sender, string commandText)
         {
             Continue = false;
+
+            if (ShapeBlo != null)
+                ShapeBlo.Dispose();
+            ShapeBlo = null;
         }
 
         /// <summary>
-        /// 
+        /// List Execute Event.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="commandText"></param>
@@ -373,9 +396,6 @@ namespace ShapeApp
         #endregion
 
 
-        public void Dispose()
-        {
-            
-        }
+       
     }
 }

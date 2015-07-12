@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace ShapeApp.DAL.ShapeFactory
 {
-    public abstract class ShapeFactoryBase
+    public abstract class ShapeFactoryBase: IDisposable
     {
 
         #region Constructor
@@ -58,5 +58,10 @@ namespace ShapeApp.DAL.ShapeFactory
 
         #endregion
 
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

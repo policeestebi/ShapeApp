@@ -18,6 +18,7 @@ namespace ShapeApp
 
         #region Properties
 
+      
         public override string Name
         {
             get { return "centre"; }

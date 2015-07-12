@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using ShapeApp.Entities;
 namespace ShapeApp.BLL.Interfaces
 {
-    public interface IShapeBLO
+    public interface IShapeBLO: IDisposable
     {
         Shape AddShape(string shapeDefinition);
         bool DeleteShape(int id);

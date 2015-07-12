@@ -18,10 +18,19 @@ namespace ShapeApp
 
         #region Properties
 
+        /// <summary>
+        /// Command's name.
+        /// </summary>
         public abstract string Name { get; }
 
+        /// <summary>
+        /// Commands's Description
+        /// </summary>
         public abstract string Desrption { get; }
 
+        /// <summary>
+        /// Extra information when it is defined to a command.
+        /// </summary>
         public string ExtraDesciption
         {
             get;

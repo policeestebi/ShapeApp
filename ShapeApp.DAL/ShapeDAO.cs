@@ -9,7 +9,7 @@ using ShapeApp.DAL.Interfaces;
 
 namespace ShapeApp.DAL
 {
-    public class ShapeDAO : IShapeDAO
+    public class ShapeDAO : IShapeDAO, IDisposable
     {
 
         public ShapeDAO()
@@ -74,7 +74,17 @@ namespace ShapeApp.DAL
             set;
         }
 
-        private IDictionary<int, Shape> shapeCollection; 
+        private IDictionary<int, Shape> shapeCollection;
 
+
+        public void Dispose()
+        {
+            if (shapeCollection != null)
+            {
+                shapeCollection.Clear();
+            }
+
+            shapeCollection = null;
+        }
     }
 }

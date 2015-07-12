@@ -11,8 +11,6 @@ namespace ShapeApp.DAL.ShapeFactory
     {
         #region Constructor
 
-
-
         #endregion
 
         #region Methods
