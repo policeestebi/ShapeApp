@@ -41,17 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCommand.cs" />
-    <Compile Include="BaseArgument.cs" />
-    <Compile Include="ArgumentCentre.cs" />
-    <Compile Include="ArgumentX.cs" />
-    <Compile Include="ArgumentY.cs" />
-    <Compile Include="BaseCommand.cs" />
-    <Compile Include="Command.cs" />
+    <Compile Include="Commands\AddCommand.cs" />
+    <Compile Include="Arguments\ArgumentSide.cs" />
+    <Compile Include="Arguments\BaseArgument.cs" />
+    <Compile Include="Arguments\ArgumentCentre.cs" />
+    <Compile Include="Arguments\ArgumentX.cs" />
+    <Compile Include="Arguments\ArgumentY.cs" />
+    <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\DonutCommand.cs" />
+    <Compile Include="Commands\ExitCommand.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ArgumentRadius.cs" />
-    <Compile Include="RectanguleCommand.cs" />
+    <Compile Include="Arguments\ArgumentRadius.cs" />
+    <Compile Include="Commands\CircleCommand.cs" />
+    <Compile Include="Commands\RectanguleCommand.cs" />
+    <Compile Include="Commands\SquareCommand.cs" />
+    <Compile Include="Commands\TrianguleCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,6 +78,7 @@
       <Name>ShapeApp.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

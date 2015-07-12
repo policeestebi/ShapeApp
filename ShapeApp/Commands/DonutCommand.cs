@@ -7,12 +7,12 @@ using ShapeApp.Common;
 
 namespace ShapeApp
 {
-    public class RectanguleCommand : Command
+    public class DonutCommand : Command
     {
-
         #region Constructor
 
-        public RectanguleCommand():base()
+        public DonutCommand()
+            : base()
         {
 
         }
@@ -39,12 +39,14 @@ namespace ShapeApp
         {
             Arguments = new List<BaseArgument>();
 
-            Arguments.Add(new ArgumentX());
-            Arguments.Add(new ArgumentY());
-            Arguments.Add(new ArgumentCentre());
-            Arguments.Add(new ArgumentRadius());
+            Arguments.Add(new ArgumentX { ExtraDesciption = "Centre X coordinate" });
+            Arguments.Add(new ArgumentY { ExtraDesciption = "Centre Y coordinate" });
+            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Radius 1" });
+            Arguments.Add(new ArgumentRadius { ExtraDesciption = "Radius 2" });
 
         }
+
+       
 
         #endregion
 
@@ -52,7 +54,7 @@ namespace ShapeApp
 
         public override string Name
         {
-            get { return Constants.RECTANGULE_NAME; }
+            get { return Constants.DONUT_NAME; }
         }
 
         #endregion
@@ -64,15 +66,5 @@ namespace ShapeApp
         #region Attributes
 
         #endregion
-
-
-
-
-
-
-        public override string GetHelp()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

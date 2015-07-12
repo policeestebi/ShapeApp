@@ -19,6 +19,9 @@ namespace ShapeApp.Common
 
         public const string COMMAND_ADD = "add";
         public const string COMMAND_LIST = "list";
+        public const string COMMAND_HELP = "help";
+        public const string COMMAND_EXIT = "exit";
+        
 
     }
 }

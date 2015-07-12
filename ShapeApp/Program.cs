@@ -10,14 +10,9 @@ namespace ShapeApp
     {
         static void Main(string[] args)
         {
+            var menu = new Menu();
 
-            var command = new RectanguleCommand();
-
-            Console.WriteLine(command.ToString());
-
-            Console.ReadKey();
-
-            ShowMenu();
+            menu.Run();
 
         }
 

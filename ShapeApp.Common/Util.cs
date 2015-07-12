@@ -8,5 +8,8 @@ namespace ShapeApp.Common
 {
     public static class Util
     {
+
+
+
     }
 }
