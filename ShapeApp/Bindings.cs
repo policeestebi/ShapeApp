@@ -10,6 +10,9 @@ using ShapeApp.BLL.Interfaces;
 using ShapeApp.DAL;
 using ShapeApp.DAL.Interfaces;
 using ShapeApp.DAL.ShapeFactory;
+using ShapeApp.Common.Interfaces;
+using ShapeApp.Common;
+
 
 namespace ShapeApp
 {
@@ -18,6 +21,7 @@ namespace ShapeApp
 
         public override void Load()
         {
+            Bind<IFileReader>().To<FileReader>();
             Bind<IShapeDAO>().To<ShapeDAO>();
             Bind<IShapeFactory>().ToMethod(c =>
             {

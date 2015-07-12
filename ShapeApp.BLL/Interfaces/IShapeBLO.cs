@@ -10,5 +10,6 @@ namespace ShapeApp.BLL.Interfaces
         System.Collections.Generic.IList<Shape> GetShapesInsidePoint(Point point);
         bool IsValid(string shapeDefinition);
         IList<Shape> GetAllShapes();
+        string LoadShapesFromFile(string path);
     }
 }

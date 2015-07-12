@@ -7,6 +7,7 @@ using ShapeApp.DAL.ShapeFactory;
 using ShapeApp.DAL;
 using ShapeApp.DAL.Interfaces;
 using ShapeApp.Entities;
+using ShapeApp.Common.Interfaces;
 
 
 namespace ShapeApp.BLL
@@ -15,10 +16,11 @@ namespace ShapeApp.BLL
     {
         #region Constructor
 
-        public ShapeBLO(IShapeDAO shape,IShapeFactory shapeFactory)
+        public ShapeBLO(IShapeDAO shape,IShapeFactory shapeFactory, IFileReader fileReader)
         {
             ShapeDAO = shape;
             ShapeFactory = shapeFactory;
+            FileReader = fileReader;
         }
 
         
@@ -88,12 +90,47 @@ namespace ShapeApp.BLL
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public string LoadShapesFromFile(string path)
+        {
+            var result = new StringBuilder();
+
+            var definitions = FileReader.ReadAllLines(path);
+
+            if (String.IsNullOrEmpty(definitions)) return String.Empty;
+
+            foreach (var line in definitions.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                var shape = AddShape(line.Trim());
+
+                if (shape == null)
+                {
+                    result.AppendLine("Line not processed: " + line);
+                }
+                else 
+                    result.AppendLine(shape.ToString());
+
+            }
+
+            return result.ToString();
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public IShapeDAO ShapeDAO { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         public IShapeFactory ShapeFactory { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IFileReader FileReader { get; set; }
 
     }
 }

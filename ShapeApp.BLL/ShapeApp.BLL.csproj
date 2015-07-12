@@ -44,6 +44,10 @@
     <Compile Include="ShapeBLO.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ShapeApp.Common\ShapeApp.Common.csproj">
+      <Project>{cb046fa1-d3e5-4989-8b79-e6bb6570e9a3}</Project>
+      <Name>ShapeApp.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShapeApp.DAL\ShapeApp.DAL.csproj">
       <Project>{62500ff6-6e2a-4ad1-8b23-74eb1c6a48ed}</Project>
       <Name>ShapeApp.DAL</Name>

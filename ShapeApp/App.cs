@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ShapeApp.BLL.Interfaces;
 using ShapeApp.Common;
 using ShapeApp.Entities;
+using System.IO;
 
 namespace ShapeApp
 {
@@ -46,6 +47,7 @@ namespace ShapeApp
             var exitCommand = new ExitCommand();
             var listCommand = new ListCommand();
             var searchCommand = new SearchCommand();
+            var loadCommand = new LoadCommand();
 
             circleCommand.onExecute += onExecute;
             circleCommand.onValidate += onValidate;
@@ -63,12 +65,10 @@ namespace ShapeApp
             donutCommand.onValidate += onValidate;
 
             helpCommand.onExecute += helpCommand_onExecute;
-
             exitCommand.onExecute += exitCommand_onExecute;
-
             listCommand.onExecute += listCommand_onExecute;
-
             searchCommand.onExecute += searchCommand_onExecute;
+            loadCommand.onExecute += loadCommand_onExecute;
 
             Commands = new List<Command>();
             Commands.Add(circleCommand);
@@ -78,8 +78,10 @@ namespace ShapeApp
             Commands.Add(donutCommand);
             Commands.Add(listCommand);
             Commands.Add(searchCommand);
+            Commands.Add(loadCommand);
             Commands.Add(helpCommand);
             Commands.Add(exitCommand);
+            
 
             //Add Initial Data 
 
@@ -90,6 +92,8 @@ namespace ShapeApp
             ExecuteOperation("donut 4.5 7.8 1.5 1.8");
 
         }
+
+        
 
        
         /// <summary>
@@ -210,6 +214,32 @@ namespace ShapeApp
         #endregion
 
         #region Events
+
+        public void loadCommand_onExecute(object sender, string commandText)
+        {
+            try
+            {
+                var values = commandText.Split(Constants.CHARACTER_SEPARATOR);
+
+                if (values == null || values.Length > 2) return;
+
+                var path = values[1];
+
+                Message = ShapeBlo.LoadShapesFromFile(path);
+
+            }
+            catch(FileNotFoundException){
+
+                Message = "The File does not exist";
+            }
+            catch (Exception)
+            {
+                Message = "Error loading shapes form file. Please try again.";
+                
+            }
+
+            
+        }
 
         /// <summary>
         /// 
